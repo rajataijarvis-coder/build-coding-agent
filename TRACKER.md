@@ -1,63 +1,88 @@
 # 🎓 Build Your Own Coding Agent - Course Tracker
 
 **Status:** Active (Day 1, Tutorial 1/288 complete)  
-**Mode:** Hybrid + Live Sessions
+**Mode:** Hybrid + GitHub Workflow
 - I publish tutorials to blog (self-paced)
-- Live sessions 2-3x/week (real-time together)
+- GitHub PRs for code review (collaborative)
 - You track progress (Option B)  
 **Last Updated:** 2026-03-18  
 **Next Tutorial:** Day 1, Tutorial 2 (System Architecture Deep Dive)
 
 ---
 
-## 🎥 LIVE SESSIONS (New!)
+## 🔄 GITHUB WORKFLOW (New!)
 
-**Format:** We work together in real-time via screen share
-**Duration:** 60-90 minutes per session
-**Frequency:** 2-3 sessions per week (your schedule)
-**Mode:** I explain + code, you follow + ask questions
+**Format:** Async collaboration via GitHub PRs
+**Response Time:** Within same day (usually)
+**Mode:** You code → Push → I review → Comment fixes
 
-### Upcoming Live Sessions
+### How It Works
 
-| Session | Topics | Status | Scheduled | Recording |
-|---------|--------|--------|-----------|-----------|
-| **Session 1** | Tutorial 1-2: Architecture + System Design | 🟡 Planned | TBD | - |
-| **Session 2** | Tutorial 3-6: OOP, SOLID, Patterns | ⚪ Not Scheduled | - | - |
-| **Session 3** | Tutorial 7-12: Project Setup + Skeleton | ⚪ Not Scheduled | - | - |
-| **Session 4** | Tutorial 13-24: Hands-on Build | ⚪ Not Scheduled | - | - |
-| **Session 5+** | [To be scheduled] | ⚪ Not Scheduled | - | - |
+**Your Flow:**
+```bash
+# 1. Clone repo
+git clone https://github.com/rajataijarvis-coder/build-coding-agent.git
 
-### Live Session Agenda Template
+# 2. Create your branch
+git checkout -b ratewar-session-1
 
-**Before Session:**
-- [ ] I prepare code examples
-- [ ] You read relevant tutorials
-- [ ] You set up your environment
+# 3. Work on tutorials
+# Edit files in your-work/
 
-**During Session (60-90 min):**
-1. **Quick review** (10 min) - What we covered last time
-2. **Concept explanation** (20 min) - I explain new topic
-3. **Live coding** (30-40 min) - We build together
-4. **Your turn** (15-20 min) - You try, I guide
-5. **Q&A + next steps** (10 min) - Questions, assign homework
+# 4. Push your progress
+git add .
+git commit -m "Completed tutorials 1-3, stuck on exercise 2"
+git push origin ratewar-session-1
 
-**After Session:**
-- [ ] I upload recording (if we record)
-- [ ] You complete any remaining exercises
-- [ ] We schedule next session
+# 5. Create PR for review
+gh pr create --title "Session 1: Tutorials 1-3" --body "Ready for review"
+```
 
-### How Live Sessions Work
+**My Flow:**
+```bash
+# 1. See your PR
+gh pr list
 
-**Platform:** WhatsApp video call + screen share
-**Tools:** 
-- VS Code (you code, I watch)
-- Terminal (we run together)
-- Browser (blog/docs reference)
+# 2. Review your code
+gh pr view 1
 
-**Preparation:**
-- You: Read tutorials before session
-- Me: Prepare live code examples
-- Both: Test audio/video
+# 3. Comment with feedback
+gh pr comment 1 --body "Line 42: Try using composition instead of inheritance"
+
+# 4. Or checkout and fix
+gh pr checkout 1
+# Edit files...
+git commit -am "Fix: handle edge case in error handling"
+git push
+```
+
+### PR Review Process
+
+**When you push code:**
+1. I get notification
+2. Review within hours (same day)
+3. Comment with:
+   - ✅ What looks good
+   - ❌ What needs fixing
+   - 💡 Suggestions for improvement
+   - 📚 Links to relevant docs
+
+**When you have questions:**
+- Comment on PR: "Stuck on X, getting Y error"
+- Or WhatsApp me: "Check PR #3, need help with Z"
+- I respond with fix or explanation
+
+### Communication
+
+**GitHub (Primary):**
+- PR comments for code-specific feedback
+- Issues for general questions
+- Commit messages show progress
+
+**WhatsApp (Secondary):**
+- "Pushed PR #5, stuck on exercise 3"
+- "Ready for next batch of tutorials"
+- Quick questions that don't need code context
 
 ---
 
