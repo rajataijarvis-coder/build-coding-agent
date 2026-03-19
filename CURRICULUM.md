@@ -210,6 +210,62 @@
 
 ---
 
+## 🌐 Phase 5: Agent-Native Web (Bonus Days 13-14)
+*Making your agent accessible via browsers - cutting edge WebMCP standard*
+
+#### Day 13: WebMCP Fundamentals
+- **T289:** What is WebMCP? W3C standard for agent-native websites
+- **T290:** WebMCP vs traditional web automation (DOM scraping vs tool calls)
+- **T291:** Architecture: Browser ↔ Agent via `navigator.modelContext`
+- **T292:** Declarative API: Exposing tools via HTML attributes
+- **T293:** Imperative API: `navigator.modelContext.registerTool()`
+- **T294:** JSON Schema for browser tool definitions
+- **T295:** Security model: Same-origin, permissions, sandboxing
+- **T296:** Chrome 146+ setup: Enabling WebMCP flags
+- **T297:** Model Context Tool Inspector: Debugging WebMCP tools
+- **T298:** MCP-B library: Polyfills and React hooks
+- **T299:** First WebMCP tool: Echo/hello world
+- **T300:** Tool discovery: How agents find website tools
+- **T301:** Hands-on: Create first WebMCP-enabled page
+
+#### Day 14: Building Agent-Native Applications
+- **T302:** Designing agent-first UX (not human-first)
+- **T303:** Tool design for programmatic access
+- **T304:** State management: Sharing state between agent and UI
+- **T305:** Multi-tool workflows: Complex agent interactions
+- **T306:** Error handling in WebMCP: Graceful degradation
+- **T307:** Combining WebMCP with our coding agent
+- **T308:** Web UI for coding agent: Expose agent tools via browser
+- **T309:** Agent-to-agent communication via WebMCP
+- **T310:** Production deployment: Hosting WebMCP apps
+- **T311:** Testing WebMCP tools: Inspector + automated tests
+- **T312:** Future of WebMCP: Ecosystem and adoption
+- **T313-T324:** Hands-on: Build agent-native coding interface
+
+**Learning Outcomes:**
+- Understand WebMCP standard and its place in agent ecosystem
+- Build websites designed for AI agent interaction
+- Expose your coding agent via browser tools
+- Create agent-native applications that agents can use directly
+
+**Real-World Examples:**
+- Flight booking: `searchFlights()` → `bookTicket()` tools
+- E-commerce: `addToCart()`, `checkout()` exposed to agents
+- Documentation: `searchDocs()`, `runExample()` for agent learning
+
+**Prerequisites:**
+- Chrome Canary/Beta 146+
+- JavaScript/TypeScript basics
+- Completed Days 1-12
+
+**Resources:**
+- [WebMCP Spec (W3C)](https://webmachinelearning.github.io/webmcp)
+- [Chrome Early Preview](https://developer.chrome.com/blog/webmcp-epp)
+- [MCP-B Documentation](https://docs.mcp-b.ai/)
+- [Model Context Tool Inspector](https://chromewebstore.google.com/detail/model-context-tool-inspec/gbpdfapgefenggkahomfgkhfehlcenpd)
+
+---
+
 ## 🎯 Learning Outcomes
 
 By the end, students will:
@@ -219,6 +275,8 @@ By the end, students will:
 4. **Build** production-ready software with tests
 5. **Deploy** a working coding agent
 6. **Extend** it with custom tools
+7. **Create** agent-native web applications (WebMCP)
+8. **Understand** cutting-edge agent-web integration standards
 
 ---
 
