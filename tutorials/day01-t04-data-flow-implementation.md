@@ -50,18 +50,17 @@ class SimpleAgent:
         Main entry point - the Controller in our architecture.
         
         Flow:
-        1. Receive user input
-        2. Decide what to do (in v0, we just echo)
+        1. Process input (decide what to do)
+        2. Store in history (only for non-commands)
         3. Return response
         """
-        # Step 1: Store the input
-        self.conversation_history.append({"role": "user", "content": user_input})
-        
-        # Step 2: Process (Controller logic)
+        # Step 1: Process (Controller logic)
         response = self._process_input(user_input)
         
-        # Step 3: Store the response
-        self.conversation_history.append({"role": "agent", "content": response})
+        # Step 2: Store in history only for non-command messages
+        if not user_input.startswith("/"):
+            self.conversation_history.append({"role": "user", "content": user_input})
+            self.conversation_history.append({"role": "agent", "content": response})
         
         return response
     
@@ -174,8 +173,6 @@ Agent: Available commands:
 You: /history
 Agent: You: Hello
 Agent: Received: 'Hello'. (LLM integration coming in Tutorial 25!)
-You: /help
-Agent: Available commands: ...
 
 You: /clear
 Agent: History cleared.

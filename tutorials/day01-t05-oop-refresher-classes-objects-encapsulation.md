@@ -447,20 +447,18 @@ class Agent:
         Main entry point - process user input and return response.
         
         Flow:
-        1. Store user input in conversation
-        2. Decide what to do (command or default response)
-        3. Execute and get response
-        4. Store response in conversation
-        5. Return response
+        1. Decide what to do (command or default response)
+        2. Execute and get response
+        3. Store in conversation (only for non-commands)
+        4. Return response
         """
-        # Step 1: Store user input
-        self._conversation.add_message("user", user_input)
-        
-        # Step 2 & 3: Process and get response
+        # Step 1 & 2: Process and get response
         response = self._process_input(user_input)
         
-        # Step 4: Store response
-        self._conversation.add_message("agent", response)
+        # Step 3: Store in conversation only for non-command messages
+        if not user_input.startswith("/"):
+            self._conversation.add_message("user", user_input)
+            self._conversation.add_message("agent", response)
         
         return response
     
@@ -572,13 +570,12 @@ Agent: Current time: 2026-03-19 09:47:32
 You: /history
 Agent: You: Hello
 Agent: Received: 'Hello'. (LLM integration coming in Tutorial 25!)
-You: /help
-Agent: Available commands: ...
-You: /time
-Agent: Current time: ...
+
+You: /clear
+Agent: History cleared.
 
 You: quit
-Goodbye! Total messages: 8
+Goodbye! Total messages: 2
 ```
 
 ---
