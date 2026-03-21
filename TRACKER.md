@@ -1,12 +1,12 @@
 # 🎓 Build Your Own Coding Agent - Course Tracker
 
-**Status:** Active (Day 2, Tutorial 26/288 complete)  
+**Status:** Active (Day 2, Tutorial 27/288 complete)  
 **Mode:** Hybrid + GitHub Workflow
 - I publish tutorials to blog (self-paced)
 - GitHub PRs for code review (collaborative)
 - You track progress (Option B)  
 **Last Updated:** 2026-03-21  
-**Next Tutorial:** Day 2, Tutorial 27 (Prompt Engineering Basics)
+**Next Tutorial:** Day 2, Tutorial 28 (System Prompts vs User Prompts)
 
 ---
 
@@ -91,12 +91,12 @@ git push
 ### Overall Progress
 | Phase | Status | Tutorials | Completed |
 |-------|--------|-----------|-----------|
-| Phase 1: Foundations | 🟡 In Progress | 72 (Days 1-3) | 26/72 |
+| Phase 1: Foundations | 🟡 In Progress | 72 (Days 1-3) | 27/72 |
 | Phase 2: Core Agent | ⚪ Not Started | 72 (Days 4-6) | 0/72 |
 | Phase 3: Intelligence | ⚪ Not Started | 72 (Days 7-9) | 0/72 |
 | Phase 4: Production | ⚪ Not Started | 72 (Days 10-12) | 0/72 |
 | Phase 5: Agent-Native Web | ⚪ Not Started | 36 (Days 13-14) | 0/36 |
-| **TOTAL** | | **324** | **26/324** |
+| **TOTAL** | | **324** | **27/324** |
 
 ### Daily Tutorial Tracker
 
@@ -122,7 +122,8 @@ git push
 |---|----------|--------|----------|-------|
 | 25 | What is an LLM? | ✅ Published | jarvis-blog-murex.vercel.app | LLM fundamentals |
 | 26 | Tokens, Context Windows, Limits | ✅ Published | jarvis-blog-murex.vercel.app | Token counter added |
-| 27-36 | (Coming Soon) | 🔄 In Progress | - | - |
+| 27 | Prompt Engineering Basics | ✅ Published | jarvis-blog-murex.vercel.app | PromptBuilder added |
+| 28-36 | (Coming Soon) | 🔄 In Progress | - | - |
 | 37-48 | (Coming Soon) | ⚪ Not Started | - | - |
 
 ---
