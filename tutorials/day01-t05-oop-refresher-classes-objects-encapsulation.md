@@ -74,6 +74,99 @@ class Tool(ABC):
     def description(self) -> str: ...
 ```
 
+### 4. **Class Diagram** - Visual overview
+
+Here's how our classes relate to each other:
+
+```mermaid
+classDiagram
+    direction TB
+    
+    class Tool {
+        <<abstract>>
+        +name() str
+        +description() str
+        +execute(args) str
+    }
+    
+    class HelpTool {
+        +name() "help"
+        +description() str
+        +execute(args) str
+    }
+    
+    class TimeTool {
+        +name() "time"
+        +description() str
+        +execute(args) str
+    }
+    
+    class HistoryTool {
+        -_conversation ConversationManager
+        +name() "history"
+        +description() str
+        +execute(args) str
+    }
+    
+    class ClearTool {
+        -_conversation ConversationManager
+        +name() "clear"
+        +description() str
+        +execute(args) str
+    }
+    
+    class ConversationManager {
+        -_history List[Message]
+        -_max_history int
+        +add_message(role, content)
+        +get_history() tuple
+        +clear()
+        +format_history() str
+        +message_count int
+    }
+    
+    class ToolRegistry {
+        -_tools Dict[str, Tool]
+        +register(tool)
+        +get(name) Tool
+        +list_tools() List
+        +get_help_text() str
+    }
+    
+    class Agent {
+        -_conversation ConversationManager
+        -_tools ToolRegistry
+        +run(user_input) str
+        +message_count int
+    }
+    
+    class Message {
+        <<frozen dataclass>>
+        +role: str
+        +content: str
+        +timestamp: datetime
+    }
+    
+    Tool <|-- HelpTool : implements
+    Tool <|-- TimeTool : implements
+    Tool <|-- HistoryTool : implements
+    Tool <|-- ClearTool : implements
+    
+    ConversationManager --> Message : contains
+    HistoryTool --> ConversationManager : uses
+    ClearTool --> ConversationManager : uses
+    
+    ToolRegistry --> Tool : manages
+    Agent --> ConversationManager : uses
+    Agent --> ToolRegistry : uses
+```
+
+**Key relationships:**
+- **Inheritance** (`<|--`): All tools implement the `Tool` interface
+- **Composition** (`-->`): Agent uses `ConversationManager` and `ToolRegistry`
+- **Association**: `ToolRegistry` manages multiple `Tool` objects
+- **Dependency**: `HistoryTool` and `ClearTool` need `ConversationManager`
+
 ---
 
 ## 🛠️ Let's Refactor
