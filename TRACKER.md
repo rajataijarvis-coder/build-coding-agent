@@ -1,12 +1,12 @@
 # 🎓 Build Your Own Coding Agent - Course Tracker
 
-**Status:** Active (Day 1, Tutorial 8/288 complete)  
+**Status:** Active (Day 2, Tutorial 26/288 complete)  
 **Mode:** Hybrid + GitHub Workflow
 - I publish tutorials to blog (self-paced)
 - GitHub PRs for code review (collaborative)
 - You track progress (Option B)  
-**Last Updated:** 2026-03-19  
-**Next Tutorial:** Day 1, Tutorial 9 (Setting Up Development Environment)
+**Last Updated:** 2026-03-21  
+**Next Tutorial:** Day 2, Tutorial 27 (Prompt Engineering Basics)
 
 ---
 
@@ -91,12 +91,12 @@ git push
 ### Overall Progress
 | Phase | Status | Tutorials | Completed |
 |-------|--------|-----------|-----------|
-| Phase 1: Foundations | 🟡 In Progress | 72 (Days 1-3) | 8/72 |
+| Phase 1: Foundations | 🟡 In Progress | 72 (Days 1-3) | 26/72 |
 | Phase 2: Core Agent | ⚪ Not Started | 72 (Days 4-6) | 0/72 |
 | Phase 3: Intelligence | ⚪ Not Started | 72 (Days 7-9) | 0/72 |
 | Phase 4: Production | ⚪ Not Started | 72 (Days 10-12) | 0/72 |
 | Phase 5: Agent-Native Web | ⚪ Not Started | 36 (Days 13-14) | 0/36 |
-| **TOTAL** | | **324** | **8/324** |
+| **TOTAL** | | **324** | **26/324** |
 
 ### Daily Tutorial Tracker
 
@@ -111,13 +111,19 @@ git push
 | 6 | SOLID Principles | ✅ Published | jarvis-blog-murex.vercel.app | agent_v2.py created |
 | 7 | Design Patterns | ✅ Published | jarvis-blog-murex.vercel.app | agent_v3.py created |
 | 8 | Project Structure | ✅ Published | jarvis-blog-murex.vercel.app | Package structure |
-| 9 | Setup Environment | ⚪ Not Started | - | - |
-| 10 | Agent Class Skeleton | ⚪ Not Started | - | - |
-| 11 | Interface Design | ⚪ Not Started | - | - |
-| 12 | Dependency Injection | ⚪ Not Started | - | - |
-| 13-24 | Hands-on: Skeleton | ⚪ Not Started | - | - |
+| 9 | Setup Environment | ✅ Published | jarvis-blog-murex.vercel.app | Poetry, Git, API keys |
+| 10 | Agent Class Skeleton | ✅ Published | jarvis-blog-murex.vercel.app | Agent class created |
+| 11 | Interface Design | ✅ Published | jarvis-blog-murex.vercel.app | Contracts defined |
+| 12 | Dependency Injection | ✅ Published | jarvis-blog-murex.vercel.app | DI container wired |
+| 13 | Build Skeleton (Hands-on) | ✅ Published | jarvis-blog-murex.vercel.app | Full skeleton complete |
 
-[Days 2-12 to be added as we progress]
+#### Day 2: LLM Fundamentals
+| # | Tutorial | Status | Blog URL | Notes |
+|---|----------|--------|----------|-------|
+| 25 | What is an LLM? | ✅ Published | jarvis-blog-murex.vercel.app | LLM fundamentals |
+| 26 | Tokens, Context Windows, Limits | ✅ Published | jarvis-blog-murex.vercel.app | Token counter added |
+| 27-36 | (Coming Soon) | 🔄 In Progress | - | - |
+| 37-48 | (Coming Soon) | ⚪ Not Started | - | - |
 
 ---
 
