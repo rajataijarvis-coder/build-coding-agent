@@ -71,7 +71,7 @@ flowchart TB
                 
                 subgraph sub4["events/"]
                     init4["__init__.py"]
-                    emitter["emitter.py"
+                    emitter["emitter.py"]
                 end
             end
         end
