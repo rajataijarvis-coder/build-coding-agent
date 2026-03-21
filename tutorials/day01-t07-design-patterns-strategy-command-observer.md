@@ -487,6 +487,186 @@ class EventEmitter:
 
 ---
 
+## 📊 Class Diagram - All Three Patterns
+
+Here's how all the classes work together:
+
+```mermaid
+classDiagram
+    direction TB
+    
+    %% Strategy Pattern
+    class LLMStrategy {
+        <<abstract>>
+        +name() str
+        +complete(prompt) str
+        +max_tokens int
+    }
+    
+    class ClaudeStrategy {
+        -_api_key str
+        -_model str
+        +name() str
+        +complete(prompt) str
+    }
+    
+    class OpenAIStrategy {
+        -_api_key str
+        -_model str
+        +name() str
+        +complete(prompt) str
+    }
+    
+    class OllamaStrategy {
+        -_model str
+        -_base_url str
+        +name() str
+        +complete(prompt) str
+        +max_tokens int
+    }
+    
+    class LLMClient {
+        -_strategy LLMStrategy
+        +provider_name str
+        +complete(prompt) str
+        +set_strategy(strategy)
+    }
+    
+    %% Command Pattern
+    class Command {
+        <<abstract>>
+        +name() str
+        +execute() str
+        +can_execute() bool
+    }
+    
+    class ToolCommand {
+        -_tool Tool
+        -_args str
+        -_executed bool
+        -_execution_time float
+        +name() str
+        +execute() str
+        +can_execute() bool
+        +was_executed bool
+        +execution_time float
+    }
+    
+    class CommandResult {
+        +command_name str
+        +success bool
+        +output str
+        +error str
+        +execution_time_ms float
+    }
+    
+    class CommandHistory {
+        -_history List[CommandResult]
+        -_max_history int
+        +add_result(result)
+        +get_recent(count) List
+        +total_commands int
+        +success_rate float
+    }
+    
+    %% Observer Pattern
+    class AgentObserver {
+        <<abstract>>
+        +on_event(event) None
+    }
+    
+    class LoggingObserver {
+        -_log_file str
+        -_verbose bool
+        +on_event(event) None
+    }
+    
+    class MetricsObserver {
+        -_event_counts Dict
+        -_error_count int
+        -_tool_timings Dict
+        +on_event(event) None
+        +get_summary() dict
+    }
+    
+    class EventEmitter {
+        -_observers List[AgentObserver]
+        +subscribe(observer)
+        +unsubscribe(observer)
+        +emit(event_type, data, source)
+    }
+    
+    class AgentEvent {
+        +event_type EventType
+        +timestamp datetime
+        +data dict
+        +source str
+    }
+    
+    %% Tool System
+    class Tool {
+        <<abstract>>
+        +name() str
+        +description() str
+        +execute(args) str
+    }
+    
+    class ToolRegistry {
+        -_tools Dict[str, Tool]
+        +register(tool)
+        +get(name) Tool
+        +list_tools() List
+    }
+    
+    %% Main Agent
+    class Agent {
+        -_llm LLMClient
+        -_events EventEmitter
+        -_command_history CommandHistory
+        -_conversation ConversationManager
+        -_tools ToolRegistry
+        +llm_provider str
+        +run(user_input) str
+        +set_llm_provider(strategy)
+        +subscribe(observer)
+        +get_command_stats() dict
+    }
+    
+    %% Relationships - Strategy Pattern
+    LLMStrategy <|-- ClaudeStrategy : implements
+    LLMStrategy <|-- OpenAIStrategy : implements
+    LLMStrategy <|-- OllamaStrategy : implements
+    LLMClient --> LLMStrategy : uses
+    Agent --> LLMClient : uses
+    
+    %% Relationships - Command Pattern
+    Command <|-- ToolCommand : implements
+    ToolCommand --> Tool : wraps
+    ToolCommand ..> CommandResult : creates
+    CommandHistory --> CommandResult : tracks
+    Agent --> CommandHistory : uses
+    Agent ..> ToolCommand : creates
+    
+    %% Relationships - Observer Pattern
+    AgentObserver <|-- LoggingObserver : implements
+    AgentObserver <|-- MetricsObserver : implements
+    EventEmitter --> AgentObserver : notifies
+    EventEmitter .. AgentEvent : creates
+    Agent --> EventEmitter : uses
+    
+    %% Tool System
+    ToolRegistry --> Tool : manages
+    Agent --> ToolRegistry : uses
+```
+
+**Pattern Relationships:**
+- **Strategy** (`<|--`): LLM providers are interchangeable strategies
+- **Command** (`<|--`): Tool execution is wrapped as commands for tracking
+- **Observer** (`<|--`): Multiple observers can listen to agent events
+- **Composition** (`-->`): Agent composes all three patterns
+
+---
+
 ## 🛠️ Putting It All Together: agent_v3.py
 
 Now let's integrate all three patterns into `agent_v3.py`:
