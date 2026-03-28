@@ -222,6 +222,8 @@ For students who finish early or want more:
 - B5: Web UI with Flask/FastAPI
 - **B6: Sub-Agent Pattern (woodx9 approach) — PLACEHOLDER**
 - **B7: Dynamic Tool Generation (hot-reload) — PLACEHOLDER**
+- **B6: Sub-Agent Pattern (woodx9 approach) — PLACEHOLDER**
+- **B7: Dynamic Tool Generation (hot-reload) — PLACEHOLDER**
 
 ---
 
