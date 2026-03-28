@@ -1,12 +1,12 @@
 # 🎓 Build Your Own Coding Agent - Course Tracker
 
-**Status:** Day 1 Complete (T1-T13) - Consolidating before Day 2  
+**Status:** Day 3 In Progress (T25-T36) - Tool Use Loop  
 **Mode:** Hybrid + GitHub Workflow
 - I publish tutorials to GitHub (canonical source)
 - You follow along, run code, ask questions
-- Day 1 foundation solid, ready for Day 2 (File Operations)  
-**Last Updated:** 2026-03-25  
-**Next:** Review Day 1 capstone, then start Day 2 T14 (File Operations)
+- Day 3 (Tool Use Loop) is now live!  
+**Last Updated:** 2026-03-28  
+**Next:** T26 - JSON Schema for Tool Definitions
 
 ---
 
@@ -91,10 +91,12 @@ git push
 ### Overall Progress
 | Phase | Status | Tutorials | Completed |
 |-------|--------|-----------|-----------|
-| Phase 1: Foundations | 🟡 In Progress | 60 (Days 1-5) | 13/60 |
-| Phase 2: Core Agent | ⚪ Not Started | 60 (Days 6-10) | 0/60 |
-| Phase 3: Intelligence | ⚪ Not Started | - | - |
-| **TOTAL** | | **Streamlined** | **13/60** |
+| Phase 1: Foundations | ✅ Complete | 13 (Days 1) | 13/13 |
+| Phase 2: File Operations | ✅ Complete | 11 (Days 2) | 11/11 |
+| Phase 3: Tool Use Loop | 🟡 In Progress | 12 (Day 3) | 1/12 |
+| Phase 4: Shell & Context | ⚪ Not Started | 12 (Day 4) | 0/12 |
+| Phase 5: Polish & Testing | ⚪ Not Started | 12 (Day 5) | 0/12 |
+| **TOTAL** | 🟡 In Progress | **Streamlined** | **25/60** |
 
 **Note:** Course streamlined from 324 to 60 tutorials (5 days). Focus on working agent by end.
 
@@ -117,14 +119,34 @@ git push
 | 12 | Dependency Injection | ✅ Published | jarvis-blog-murex.vercel.app | DI container wired |
 | 13 | Day 1 Capstone: Summary & Complete Code | ✅ Published | GitHub | Working code consolidating T1-T12 |
 
-#### Day 2: LLM Fundamentals
+#### Day 2: File Operations
 | # | Tutorial | Status | Blog URL | Notes |
 |---|----------|--------|----------|-------|
-| 25 | What is an LLM? | ✅ Published | jarvis-blog-murex.vercel.app | LLM fundamentals |
-| 26 | Tokens, Context Windows, Limits | ✅ Published | jarvis-blog-murex.vercel.app | Token counter added |
-| 27 | Prompt Engineering Basics | ✅ Published | jarvis-blog-murex.vercel.app | PromptBuilder added |
-| 28-36 | (Coming Soon) | 🔄 In Progress | - | - |
-| 37-48 | (Coming Soon) | ⚪ Not Started | - | - |
+| 14 | File Operations: Read and Write | ✅ Published | jarvis-blog-murex.vercel.app | read_file, write_file |
+| 15 | Path Validation and Safety | ✅ Published | jarvis-blog-murex.vercel.app | No ../ escapes |
+| 16 | Directory Listing: list_dir | ✅ Published | jarvis-blog-murex.vercel.app | List directory contents |
+| 17 | Multi-File Operations | ✅ Published | jarvis-blog-murex.vercel.app | Batch operations |
+| 18 | Search: grep, find | ✅ Published | jarvis-blog-murex.vercel.app | Pattern matching |
+| 19 | File Watching: change detection | ✅ Published | jarvis-blog-murex.vercel.app | Monitor file changes |
+| 20 | File Editing: patching | ✅ Published | jarvis-blog-murex.vercel.app | Edit files safely |
+| 21 | Binary File Detection | ✅ Published | jarvis-blog-murex.vercel.app | Skip binary files |
+| 22 | File Diff Preview | ✅ Published | jarvis-blog-murex.vercel.app | Show differences |
+
+#### Day 3: Tool Use Loop
+| # | Tutorial | Status | Blog URL | Notes |
+|---|----------|--------|----------|-------|
+| 25 | Tool Use Concept: LLM Function Calling | ✅ Published | GitHub | JSON tool calls intro |
+| 26 | JSON Schema for Tool Definitions | 🔄 In Progress | - | Tool schema format |
+| 27 | Anthropic Tool Use Format | ⚪ Not Started | - | Claude-specific |
+| 28 | Parsing Tool Calls | ⚪ Not Started | - | Extract structured calls |
+| 29 | Tool Execution Loop | ⚪ Not Started | - | Call → Execute → Return |
+| 30 | Error Handling in Tool Loop | ⚪ Not Started | - | Graceful failures |
+| 31 | ReAct Pattern | ⚪ Not Started | - | Thought → Action → Observation |
+| 32 | Multi-Step Tasks | ⚪ Not Started | - | Planning before execution |
+| 33 | Self-Correction | ⚪ Not Started | - | When tools fail |
+| 34 | Token Tracking | ⚪ Not Started | - | Monitor costs |
+| 35 | Conversation Persistence | ⚪ Not Started | - | Save/load sessions |
+| 36 | Hands-on: Complete Tool Use System | ⚪ Not Started | - | End-to-end |
 
 ---
 
